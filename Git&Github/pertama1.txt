@@ -16,4 +16,28 @@ MENGEDIT FILE DI DIREKTORI KERJA => MENAMBAHKAN FILE KE DALAM STAGING AREA => ME
 # Kerja si git nya dulu kita dapat melakukan git add file_namenya yang ingin di masukan ke add
 # Kemudian kita bisa mengecek apa saja yang sudah ditambahkan dengan git status
 kita juga dapat mengetahui perbedaan apabila git yang sebelumnya di tambahkan kemudian di rubah maka git diff akan menampilkan perbedaan
-kemudia jika ingin menyimpan perubahan kita dapat melakukan dengan git add file_namenya
+kemudia jika ingin menyimpan perubahan kita dapat melakukan dengan git add file_namenya 
+git commit adalah langkah terakhir dalam alur kerja GIT. Sebuah git commit secara permanen menyimpan perubahan dalam
+staging area dalam repository. 
+Penulisan git commit adalah :
+git commit -m "komentar"
+
+=> kemudian ada yang namanya git log (seringkali dengan GIT, Anda harus merujuk kembali ke versi proyek sebelumnya)
+git log digunakan untuk melihat kronologis dalam repository cara penulisannya :
+git log
+(Jika kalian ngestuck di git log " tekan q "  untuk keluar mode log)
+
+=> untuk melihat yang terjadi kita bisa menggunakan git show HEAD
+=> jika kita ingin mengembalikan keseperti sebelumnya sebelum mengubah isi didalam file kita dapat menggunakan:
+git checkout HEAD file_namenya
+=> Kemudian ada cara yang digunakan untuk unstage yaitu dengan menggunakan git reset
+git reset HEAD file_namenya
+atau bisa juga git reset dengan menggunakan SHA_commit
+git reset SHA_commit
+(RESET DISINI ARTINYA KITA MENGHAPUS SEMUA PERUBAHAN YANG SUDAH DILAKUKAN DAN KEMBALI KESEBELUMNYA)
+
+# Kesimpulan :  
+git checkout HEAD file_namenya = Buang perubahan di direktori kerja dan kembalikan ke versi sebelumnya
+=> (seperti misalnya ada kesalahan penulisan didalam file)
+git reset HEAD file_namenya = unstage perubahan file di staging area (REMOVES FILE CHANGES)
+git reset SHA_commit = menyetel ulang ke commit sebelumnya dalam riwayat commit anda.
