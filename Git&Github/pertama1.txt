@@ -1,0 +1,19 @@
+kita pertama semisalnya punya suatu teks apa aja
+nah abis itu kita pertama bisa gunakan git init (digunakan untuk melacak perubahan nanti si project nya)
+Di dalam git itu terdapat bagian-bagian :
+1. Ketika menggunakan git init itu akan masuk kedalam:
+=> Sebuah Direktori Kerja dimana anda akan melakukan perkerjaannya disitu seperti membuat, mengedit dan menghapus
+dan mengatur file
+2. ada yang namanya git add itu akan masuk kedalam:
+=> Sebuah area staging tempat dimana mencantumkan perubahan yang anda buat pada Direktori Kerja
+3. ada yang namanya git commit itu akan masuk kedalam:
+=> Sebuah tempat kerja repostory dimana kita menyimpan perubahaan secara permanen sebagai versi proyek yang berbeda.
+
+ALUR KERJA GIT ITU:
+MENGEDIT FILE DI DIREKTORI KERJA => MENAMBAHKAN FILE KE DALAM STAGING AREA => MENYIMPAN PERUBAHAN KE DALAM RESPOSTORY
+
+
+# Kerja si git nya dulu kita dapat melakukan git add file_namenya yang ingin di masukan ke add
+# Kemudian kita bisa mengecek apa saja yang sudah ditambahkan dengan git status
+kita juga dapat mengetahui perbedaan apabila git yang sebelumnya di tambahkan kemudian di rubah maka git diff akan menampilkan perbedaan
+kemudia jika ingin menyimpan perubahan kita dapat melakukan dengan git add file_namenya
