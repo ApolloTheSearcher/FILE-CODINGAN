@@ -1,0 +1,10 @@
+cara untuk compile program dengan menggunakan bahasa golang yaitu dengan cara
+go build -o nama_program nama_file.go
+atau go build nama_file.go
+
+cara memanggilnya 
+./nama_file => tetapi tidak akan terjadi perubahan ketika kita merubah programnya
+
+selain compile program golang juga dapat running files dengan cara menggunakam
+go run nama_file.go
+jika ada perubahan pada program dapat dengan memanggilnya tetapi ingat kita harus mengcompile terlebih dahulu

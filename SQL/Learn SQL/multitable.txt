@@ -1,0 +1,120 @@
+Karena menggabungkan tabel membutuhkan waktu yang lebih lama. untungnya SQL mengandungi kata kunci JOIN. digunakan
+untuk memberi urutan yang lebih mudah.
+contoh penggunaan join yaitu ingin menggabungkan orders dan customers dan menyimpannya di customers_id
+SELECT *
+FROM orders
+JOIN customers
+    ON orders.customer_id = customers.customers_id;
+
+penulisannya:
+SELECT */namaColumn
+FROM namaTabel1
+JOIN namaTabel2
+    ON namaTabel1.namaKolom = namaTabel2.namaKolom;
+(kita juga dapat menambahkan fungsi seperti WHERE tetapi ditambahkan setelah fungsi JOIN
+
+Mari kita uraikan perintah ini:
+1. Baris pertama memilih semua kolom dari tabel gabungan kami. Jika kita hanya ingin memilih kolom tertentu,
+kita bisa menentukan kolom mana yang kita inginkan.
+2. Baris kedua menentukan tabel pertama yang ingin kita lihat, perintah
+3. Baris ketiga menggunakan JOIN untuk mengatakan bahwa kami ingin menggabungkan informasi dari pesanan dengan
+pelanggan.
+4. Baris keempat memberitahu kita bagaimana menggabungkan dua tabel. Kami ingin mencocokkan kolom customer_id
+tabel pesanan dengan kolom customer_id tabel pelanggan.
+
+Kemudian ada yang masih merupakan bagian join yaitu Inner join. Namun Inner join membutuhkan kolom yang sama contoh
+menghitung seluruh kolom dan kemudian di gabungkan dengan Join itu bisa disebut Inner Join
+SELECT COUNT(*)
+FROM orders
+JOIN customers
+    ON orders.id = customers.id;
+(kita juga dapat menambahkan fungsi seperti WHERE tetapi ditambahkan setelah fungsi JOIN
+
+penulisannya:
+SELECT Fungsi (*/namaColumn)
+FROM namaTabel1
+JOIN namaTabel2
+    ON namaTabel1.namaKolom = namaTabel2.namaKolom;
+(kita juga dapat menambahkan fungsi seperti WHERE tetapi ditambahkan setelah fungsi JOIN
+
+Untuk INNER JOIN, YANG DIMASUKAN ADALAH YANG BENAR BENAR SAMA ANTARA TABEL 1 DAN TABEL 2
+
+
+# LEFT JOIN
+ini adalah menggabungkan 2 tabel dengan kata kunci LEFT JOIN. dimana nanti jika di bagian kiri terdapat yang tidak sama
+dengan kanan akan tetap di masukan kecuali yang dari kanan tidak akan masuk kecuali yang dari kiri.
+penulisannya:
+SELECT */namaColumn
+FROM namaTabel1
+LEFT JOIN namaTabel2
+    ON namaTabel1.namaKolom = namaTabel2.namaKolom;
+(kita juga dapat menambahkan fungsi seperti WHERE tetapi ditambahkan setelah fungsi JOIN)
+
+# Primary Key vs Foregein Key
+Primary Key adalah kolom yang memiliki nilai unik dan tidak boleh sama.
+Contoh sebuah tabel memiliki 3 = orders, subcription, dan customers:
+Nah di bawah ini contoh kelompok Primary Key 
+orders.id for orders
+subscription.id for subscription
+customers.id for customers
+
+Primary Key memiliki beberapa syarat:
+1. Tidak ada nilai yang bisa NULL.
+2. Setiap nilai harus unik (yaitu, Anda tidak dapat memiliki dua pelanggan dengan customer_id yang sama di
+tabel pelanggan).
+3. Sebuah tabel tidak boleh memiliki lebih dari satu kolom kunci utama.
+
+Bagaimana dengan Foregein Key?
+Jika Primary Key untuk satu tabel tiba-tiba muncul di tabel yang berbeda itu disebut Foregein Key.
+Mengapa ini penting? Jenis gabungan yang paling umum adalah menggabungkan Foregein Key dari satu tabel dengan
+Primary Key dari tabel lain.
+CONTOH:
+SELECT *
+FROM classes
+JOIN students
+  ON classes.id = students.class_id;
+=> classes.id adalah Primary Key dan students.class_id adalah Foregein Key.
+
+
+# CROSS JOIN Clause
+CROSS JOIN adalah menggabungkan 2 tabel yang tidak memiliki kolom yang sama.
+jadi misalnya terdapat 3 warna celana pada tabel pants, kemudian terdapat 2 warna baju pada tabel shirts.
+maka jika kita gunakan CROSS JOIN maka kita akan menggabungkan 2 tabel tersebut. jadi 3 * 2 jadi 6 kombinasi.
+penulisannya:
+=> SELECT *
+   FROM tabelName
+   CROSS JOIN namaColumn;
+atau kita juga dapat menambahkan clause WHERE dllnya
+contoh kasus seperti ini:
+=> SELECT month, COUNT(*)
+   FROM newspaper
+   CROSS JOIN months
+   WHERE start_month <= month AND end_month >= month
+   GROUP BY month;
+jadi kita bisa menambahkan count, dan juga menambahkan WHERE, dan juga GROUP BY
+
+# UNION Clause
+UNION digunakan untuk menggabungkan hasil muncul dari beberapa pernyataan SELECT dan juga berfungsi memfilter
+data yang terduplikat, menggabungkan 2 tabel yang memiliki kolom yang sama.
+penulisannya:
+=> SELECT *
+   FROM tabelName1
+   UNION
+   SELECT *
+   FROM tabelName2;
+
+# WITH Clause
+WITH digunakan menyimpan hasil query dalam tabel sementara (temporary table) menggunakan AS.
+beberapa tabel sementara dapat didefinisikan dengan satu kata kunci WITH.
+penulisannya:
+=> WITH namaTabelSementara AS (
+    SELECT */namaColumn
+    FROM namaTabel1
+    ) 
+   SELECT */namaColumn
+   FROM namaTabelSementara;
+   (BISA TAMBAH BEBAS APA AJA JIKA INGIN menambahkan WHERE)
+
+   
+
+

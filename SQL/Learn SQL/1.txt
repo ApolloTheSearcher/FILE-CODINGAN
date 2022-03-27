@@ -1,0 +1,130 @@
+Disini kita belajar SQL ya
+=> SELECT * FROM table_name;
+tanda * artinya untuk memilih setiap kolom table tanpa harus memberi nama satu per satu
+jadi kaya langsung ngambil semua isi kolom tidak satu - satu.
+Pernyataan SELECT digunakan untuk mengambil seluruh data dari suatu tabel.
+Dibawah ini adalah SELECT yang mengembalikan seluruh data dari tabel.
+SELECT name FROM table_name;
+1. SELECT adalah klausa yang menunjukkan bahwa pernyataan tersebut adalah query. Anda akan menggunakan SELECT
+setiap kali Anda meminta data dari database.
+2. name menentukan kolom untuk meminta data.
+3. FROM celebs menentukan nama tabel untuk meminta data. Dalam pernyataan ini, data ditanyakan dari tabel
+selebriti.
+
+
+Kemudian kita bisa membuat table sederhana dengan menggunakan
+CREATE TABLE table_name(
+    column_1 data_type, 
+    column_2 data_type, 
+    column_3 data_type
+); => seperti bahasa midle kita terakhirnya menggunakan tanda (;)
+
+Setelah kita membuat table kita juga dapat memasukan datanya loh
+dengan menggunakan INSERT
+INSERT INTO table_name (column_1, column_2, column_3) 
+VALUES (value_1, value_2, value_3) => value ini adalah data yang nantinya akan dimasukan kedalam column 
+
+Jika ingin menambahkan column pada sql kedalam table menggunakan ALTER TABLE:
+ALTER TABLE table_name
+ADD COLUMN column_name data_type(data yang ingin ditambahkan kepada column baru);
+
+SELECT * FROM table_name; supaya bisa tau bagaimana isi datanya.
+
+# Selain itu kita juga dapat mengupdate isi data di tablenya dengan menggunakan:
+UPDATE table_name
+SET columnnya = "isi data baru"
+WHERE kondisi;
+
+SELECT * FROM table_name; (untuk melihat perubahan)
+
+# Kita juga dapat menghapus isi table tersebut dengan menggunakan (TABLE) cara nya:
+=> DELETE FROM table_name
+   WHERE kondisi;
+
+   SELECT * FROM table_name; (untuk melihat perubahan)
+
+
+# Kita juga dapat memanggil dan membentuk tabel dari column yang dipanggil menggunakan SELECT
+=> SELECT namaColumn, namaColumn2, namaColumn3 (untuk nama column bebas ya sesuai kebutuhan)
+   FROM table_name;
+
+# Didalam SQL ada kata kunci yang disebut "As" yang digunakan untuk mengganti nama column atau tabel menggunakan
+alias
+=> SELECT namaColumn AS "Yang ingin diganti"
+   FROM table_name;
+
+# Kemudian di dalam SQL ada cara gimana supaya menyaring data yang duplikat yaitu dengan menggunakan DISTINCT
+=> SELECT DISTINCT namaColumn
+   FROM table_name;
+dan nantinya akan menghasilkan table yang isinya penyaringan isi data yang duplikat
+
+# Didalam SQL ada juga yang dapat beroperasi dengan menggunakan nilai boolean yaitu dengan menggunakan WHERE,
+dimana WHERE digunakan untuk membatasi / hanya menampilkan data yang sesuai dengan kondisi yang kita inginkan.
+=> SELECT * (tanda * ini digunakan untuk menampilkan semua isi tabel) / namaColumn
+   FROM table_name
+   WHERE kondisi;
+Cara penulisannya di atas, pada where ini kita juga dapat menggunakan comparasi perbandingan loh untuk cara kerjanya
+seperti if else statement loh.
+
+# Ada cara yang digunakan untuk membandingkan data yang hurufnya hampir sama dengan menggunakan Like
+=> SELECT */namaColumn
+   FROM table_name
+   WHERE namaColumn LIKE 'dengan menggunakan tanda ( _ )'; => pada kata setelah LIKE itu akan berisi kata yang ingin kita cari
+misalnya di awali dengan kata Se dan diakhir dengan kata en 'Se_en'
+Kemudian Like ada tipe 2 dengan menggunakan tanda persen %
+=> SELECT */namaColumn
+   FROM table_name
+   WHERE namaColumn LIKE '%yang berkaitan%'; => contoh misalnya ingin mencari film dengan judul yang ada kata
+'man' jadi kita menggunakan like ini dengan '%man%' nanti akan muncul judul yang ada kata 'man'nya.
+jadi kalau di apit dengan tanda % artinya nanti yang dikeluarkan table semua yang berjudul %man%
+sedangkan jika tanda % nya seperti ini => 'man %' artinya ini yang akan ditampilkan yang judul kata depannya 'man'
+dan jika tanda % nya seperti ini => '% man' artinya ini yang akan ditampilkan yang judulnya kata belakangnnya 'man'
+
+# NULL pada SQL ada 2 ada yang NULL dan NOT NULL
+NULL dan NOT NULL sama dengan comparasi = dan !=, Penggunannya :
+=> SELECT namaColumn / *
+   FROM table_name
+   WHERE namaColumn IS NOT NULL / IS NULL;
+
+# Kemudian ada yang namanya BETWEEN digunakan untuk menampilkan yang diantara dua nilai tertentu
+=> SELECT namaColumn / *
+   FROM table_name
+   WHERE namaColumn BETWEEN nilai_1 AND nilai_2;
+
+# Kemudian ada fungsi lagi yaitu AND digunakan untuk menggabungkan multi kondisi yang kita inginkan jadi kita 
+dapat menambahkan kondisi pada BETWEEN:
+=> SELECT namaColumn / *
+   FROM table_name
+   WHERE namaColumn BETWEEN nilai_1 AND nilai_2 
+    AND namaColumn (tanda comparasi perbandingan) nilai_3; => tanda comparasi seperti (=, >, <, >=, <=, !=)
+
+# Ada lagi temannya AND yaitu OR digunakannya sama seperti AND hanya saja jika OR itu meskipun ada yang berbeda
+dia akan tetap menggabungkan kondisi yang kita inginkan bukan hanya satu kondisi saja yang ditampilkan:
+=> SELECT namaColumn / *
+   FROM table_name
+   WHERE namaColumn BETWEEN nilai_1 AND/OR nilai_2 
+    AND namaColumn (tanda comparasi perbandingan) nilai_3
+    OR namaColumn (tanda comparasi perbandingan) nilai_4;
+
+# Kemudian ada yang digunakan untuk mengurutkan suatu susunan tabel dengan menggunakan Order By (ASC, DESC)
+ASC digunakan untuk mengurutkan dari yang terrendah sampai tertinggi (lower to higher or Z to A)
+DESC digunakan untuk mengurutkan dari yang tertinggi sampai terrendah (higher to lower or A to Z)
+=> SELECT namaColumn / *
+   FROM table_name
+   ORDER BY namaColumn ASC / DESC;
+
+# Ada fungsi yang digunakan untuk membatasi jumlah data yang ditampilkan dengan LIMIT
+=> SELECT namaColumn / *
+   FROM table_name
+   LIMIT nilai;
+namun pada LIMIT tidak semua SQL alldatabase supported
+
+# Kemudian dalam SQL ada yang namanya if else statement yaitu menggunakan CASE,END
+namun pada IF di SQL menggunakan WHERE (untuk kondisinya jika bernilai true maka akan menampilkan data) dan
+THEN (untuk prosesnya jika bernilai true maka akan menampilkan data) dan ELSE (untuk proses jika bernilai false)
+=> SELECT namaColumn / *,
+   CASE
+    WHEN (kondisi) THEN (proses jika bernilai true)
+    ELSE (proses jika bernilai false)
+   END AS "table_name" => jika kita tidak menambahkan AS maka column akan terus panjang ke kanan
+   FROM table_name;

@@ -1,0 +1,105 @@
+Aggregate adalah cara perhitungan didalam SQL
+Aggregate yang penting yaitu yang akan dibahas:
+- COUNT(): menghitung jumlah baris
+- SUM(): jumlah nilai dalam kolom
+- MAX()/MIN(): nilai terbesar/terkecil
+- AVG(): rata-rata nilai dalam kolom
+- ROUND(): membulatkan nilai di kolom
+
+# Count()
+Cara tercepat untuk menghitung berapa banyak baris dalam tabel adalah dengan menggunakan fungsi COUNT().
+COUNT() adalah fungsi yang mengambil nama kolom sebagai argumen dan menghitung jumlah nilai yang tidak kosong
+di kolom itu.
+=> SELECT COUNT(*) => digunakan untuk menghitung seluruh karena memakai tanda bintang (*)
+   FROM table_name;
+namun kita juga dapat menggabungkan dengan fungsi - fungsi yang lain seperti WHERE dll
+
+# SUM()
+SQL memudahkan untuk menambahkan semua nilai dalam kolom tertentu menggunakan SUM().
+SUM() adalah fungsi yang mengambil nama kolom sebagai argumen dan mengembalikan jumlah semua nilai dalam kolom
+tersebut.
+=> SELECT SUM(column_name)
+   FROM table_name;
+
+# MAX/MIN()
+Fungsi MAX() dan MIN() masing-masing mengembalikan nilai tertinggi dan terendah dalam kolom.
+MAX() mengambil nama kolom sebagai argumen dan mengembalikan nilai terbesar di kolom itu.
+MIN() bekerja dengan cara yang sama tetapi sebaliknya; itu mengembalikan nilai terkecil.
+=> SELECT MAX/MIN(column_name)
+   FROM table_name;
+
+# AVG()
+SQL menggunakan fungsi AVG() untuk menghitung nilai rata-rata kolom tertentu dengan cepat.
+Fungsi AVG() bekerja dengan mengambil nama kolom sebagai argumen dan mengembalikan nilai rata-rata untuk
+kolom tersebut.
+=> SELECT AVG(column_name)
+   FROM table_name;
+
+# ROUND()
+Secara default, SQL mencoba setepat mungkin tanpa pembulatan. Kita dapat membuat tabel hasil lebih mudah
+dibaca menggunakan fungsi ROUND().
+Fungsi ROUND() mengambil dua argumen di dalam tanda kurung:
+1. nama kolom
+2. jumlah digit yang ingin dibulatkan(bilangan bulat)
+=> SELECT ROUND(column_name, digit) => setelah SELECT kita juga dapat menambahkan namaColumn sebagai argumen
+   FROM table_name;
+Pada ROUND kita dapat menambahkan fungsi lainnya contoh menambahkan fungsi AVG()
+=> SELECT ROUND(AVG(column_name), digit)
+   FROM table_name;
+
+# Terdapat cara bagaimana kita mencari hasil menggunakan fungsi Aggregate tanpa banyak menulis fungsinya berulang
+yaitu dengan menggunakan GROUP BY.
+==== CONTOH ====
+SELECT AVG(imdb_rating)
+FROM movies
+WHERE year = 1999;
+ 
+SELECT AVG(imdb_rating)
+FROM movies
+WHERE year = 2000;
+ 
+SELECT AVG(imdb_rating)
+FROM movies
+WHERE year = 2001;
+==== DAPAT KITA SINGKAT DENGAN GROUP BY ====
+SELECT year,
+    AVG(imdb_rating)
+FROM movies
+GROUP BY year
+ORDER BY year; => JIKA INGIN DIURUTKAN
+
+Jadi dapat kita simpulkan penulisannya:
+SELECT namaColumn,
+    fungsi(namaColumn)
+FROM namaTable
+GROUP BY namaColumn
+ORDER BY namaColumn; => JIKA INGIN DIURUTKAN(sesuai kebutuhan)
+
+# Kemudian ada juga cara dimana cara penulisan GROUP BY namaColumn bisa kita ubah karena biasanya terjadi rentan
+kesalahan syntax. Jadinya SQL mempermudah dengan cara ini:
+misalnya GROUP BY 1 => artinya kolom pertama yang dipilih
+GROUP BY 2 => artinya kolom kedua yang dipilih dan seterusnya.
+
+
+# HAVING
+Selain dapat mengelompokkan data menggunakan GROUP BY, SQL juga memungkinkan Anda memfilter grup mana yang akan
+disertakan dan mana yang dikecualikan.
+Misalnya, bayangkan kita ingin melihat berapa banyak film dengan genre berbeda yang diproduksi setiap tahun,
+tetapi kita hanya peduli pada tahun dan genre dengan setidaknya 10 film.
+Kami tidak dapat menggunakan WHERE di sini karena kami tidak ingin memfilter baris; kami ingin memfilter grup.
+Di sinilah HAVING masuk.
+HAVING sangat mirip dengan WHERE. Faktanya, semua jenis klausa WHERE yang Anda pelajari sejauh ini dapat
+digunakan dengan HAVING.
+- Jadi HAVING digunakan untuk memfilter GROUP BY
+- HAVING untuk kondisi menggunakan Aggregate fungsi
+=> SELECT namaColumn,
+    fungsi(namaColumn)
+   FROM namaTable
+   GROUP BY namaColumn/index
+   HAVING kondisi;
+# Pernyataan HAVING selalu muncul setelah GROUP BY, tetapi sebelum ORDER BY dan LIMIT
+
+# REVIEW
+Fungsi agregat menggabungkan beberapa baris bersama untuk membentuk satu nilai informasi yang lebih bermakna.
+- GROUP BY adalah klausa yang digunakan dengan fungsi agregat untuk menggabungkan data dari satu atau lebih kolom.
+- HAVING membatasi hasil kueri berdasarkan properti agregat.

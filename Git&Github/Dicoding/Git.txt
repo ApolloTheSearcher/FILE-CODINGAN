@@ -1,0 +1,38 @@
+Pembahasan tentang git dulu ya
+- Git Repository adalah tempat penyimpanan file proyek didalam Git Server
+- Git Branch adalah Percabangang untuk versi baru dari proyek Repository
+- Git Fork adalah penyalinan dari Repository orang/organisasi lain, lalu menyimpannya di dalam 
+Repository Git sendiri
+- Git clone adalah mengambil sebuah Repository dan menyimpannya pada direktori lokal
+- Git commit adalah cuplikan perubahan (snapshot) dari Repository anda pada waktu tertentu
+- Git push adalah mengirimkan hasil dari perubahan file yang dilakukan ke dalam Repository Server
+
+# Perintah dasar Git seperti commit, checkout, revert, dan reset.
+- Git commit berisi catatan tentang perubahan yang dilakukan pada Repository
+ingat ketika kita melakukan commit jangan lupa untuk menyisipkan message atau pesan perihal perubahan
+yang terjadi pada Repository agar lebih muda kita mnegenali setiap commit
+- Git checkout adalah untuk mengambil perubahan yang telah dilakukan pada Repository
+akan tetapi bersifat sementara (temporary)
+Selain itu juga perintah ini juga bisa digunakan untuk berpindah dari satu cabang kerja ke cabang kerja
+yang lain atau dapat kita gunakan untuk membuat perubahan baru berdasarkan commit di masa lalu
+Git checkout sangat berguna ketika kita ingin melakukan pengembalian kondisi kemudian mengubahnya, dan 
+membuat branch (cabang file baru) baru agar tidak mengganggu riwayat perubahan sesudahnya.
+Analoginya kita menulis cerita baru dengan plot yang berbeda
+- Git reset untuk mengatur ulang ya, maksudnya perintah untuk mengambalikan suatu kondisi berkas ke commit
+yang dituju dan menghapus riwayat sesudahnya.
+Hati-hati dengan git ini ya karena bisa menghapus semua perubahan yang telah dilakukan.
+- Git revert merupakan perintah yang hampir mirip dengan reset, perintah ini akan mengembalikan
+kondisi suatu berkas ke waktu/commit yang dituju tanpa menghapus catatan riwayat commit.
+Cuma kaya memperbaiki berkas yang dituju oleh revert.
+
+
+# Repository
+( Repository adalah tempat penyimpanan file proyek. )
+Terdapat dua jenis direktori yang harus dipahami, yaitu Remote Repository dan Local Repository
+- Remote Repository adalah tempat penyimpanan berkas-berkas pekerjaan atau kenangan yang kita miliki di dalam
+server.
+Dengan menggunakan remote Repository, orang lain dapat mengakses Repository yang kita simpan dengan mudah.
+Contoh Remote Repository seperti Github, Bitbucket, dan Gitlab.
+- Local Repository merupakan penyimpanan lokal yang berada di komputer penyimpanan lokal yang berada di komputer
+kita. Local Repository ini dapat kita ubah-ubah (hapus, modifikasi, tambah) sesuai dengan keinginan kita sebelum 
+akhirnya nanti di-push ke remote respository.
