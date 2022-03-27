@@ -1,0 +1,56 @@
+Hindari penamaan 
+# Nama yang dihindari
+Hindari karakter l (huruf L kecil), O (huruf O besar) atau I (huruf I besar) sebagai nama variabel 1 karakter karena mereka sulit dibedakan
+dengan angka satu dan nol.
+Saat Anda ingin menggunakan l (huruf l kecil), akan sangat membantu jika Anda menggunakan L besar.
+
+# Instansiasi fungsi dan method
+Gunakan self sebagai argument pertama instansiasi method.
+
+Gunakan cls sebagai argumen pertama pada class methods.
+
+Nama Method dan Nama Variabel dalam Method
+Gunakan standar penamaan Fungsi: huruf kecil dengan pemisah kata garis bawah untuk meningkatkan keterbacaan. Tambahkan garis bawah sebagai awalan untuk method non-publik dan variabel internal pada fungsi.
+
+Untuk menghindari kesamaan dengan subkelas, gunakan __dimulai_dua_garis_nama_method untuk memanggil proses yang tepat. Python menggabungkan nama modul dengan nama kelas. Jika kelas Foo memiliki atribut __a, maka kita tidak dapat mengaksesnya melalui Foo.__a, melainkan Foo._Foo__a. Mulai dengan dua garis bawah hanya digunakan jika terjadi konflik dengan atribut di kelas atau subkelas lainnya.
+
+
+
+# Konstanta
+Konstanta umumnya didefinisikan pada bagian atas modul dengan huruf besar, misalnya MAX_OVERFLOW dan TOTAL.
+
+# Selalu Persiapkan untuk Inheritance
+Saat sebuah metode dan variabel dalam sebuah kelas didefinisikan, sebaiknya Anda dapat langsung mengetahui atribut pada metode dan variabel
+tersebut, apakah publik atau non-publik. Jika Anda ragu, jadikan atributnya non-publik. Karena lebih mudah menjadikan sebuah variabel/method
+bersifat non-publik menjadi publik, dibandingkan sebaliknya.
+Method/Variabel Publik dipersiapkan untuk pihak eksternal menggunakan kelas Anda. Anda juga otomatis berkomitmen untuk menghindari adanya
+incompatible backward changes. Sebaliknya, Method/Variabel dengan atribut non-publik hanya digunakan oleh Anda sebagai developer, dan tidak
+memberikan garansi kepada siapapun bahwa Anda tidak akan mengubah atau menghapusnya. Di sini kita tidak menggunakan atribut Private karena
+di Python tidak ada atribut yang benar-benar Private.
+Kategori lain dari atribut adalah "subclass API", umumnya disebut protected pada bahasa lain. Sebuah kelas dapat didesain untuk diwariskan
+(inherited-from), misalnya untuk memodifikasi atau menjadi ekstensi dari perilaku (behavior) kelas. Dalam mendesain kelas-kelas sejenis,
+pastikan untuk membuat keputusan eksplisit, mana Variabel/Method yang memiliki atribut publik, bagian dari subclass API, dan mana yang hanya
+anda gunakan secara internal.
+Saat mendeklarasikan variabel/method tersebut, ikuti panduan Pythonic berikut:
+
+Atribut publik tidak menggunakan awalan garis bawah.
+Jika nama sebuah Method/Variabel publik sama dengan reserved keyword, tambahkan akhiran garis bawah. Hindari menyingkat atau mengurangi huruf.
+Pada Data publik bersifat simple, hindari nama yang terlalu panjang. Cukup dengan nama atribut sependek mungkin. Ingatlah bahwa di masa depan
+Anda akan mungkin mengembangkan skema atau data ini, sehingga nama sependek mungkin akan menguntungkan Anda.
+Jika Anda berniat untuk mewariskan atau membuat subclass dari kelas, dan menginginkan sebuah variabel hanya digunakan di kelas utama saja,
+tambahkan awalan dua garis bawah. Ini akan memudahkan Anda karena Python mengenalinya sebagai konvensi kelas, menghindari kemungkinan
+kesamaan nama atau implementasi.
+
+
+# Interface
+Umumnya, garansi backward compatibility hanya diaplikasikan pada interface publik. Untuk itu pengguna harus dapat membedakan dengan jelas,
+interface publik dan internal/non-publik. Interface yang didokumentasikan umumnya dianggap sebagai interface publik, kecuali dijelaskan
+secara eksplisit. Sebaliknya, setiap interface yang tidak terdokumentasi, umumnya dianggap bersifat internal.
+Untuk keterbacaan, modul sebaiknya mendeklarasikan nama interface/API melalui atribut __all__. Jika __all__ kosong, artinya modul tersebut
+tidak memiliki interface/API Publik. Selain __all__ yang diisi dengan sesuai, internal interface (paket, modul, kelas, fungsi, atribut, atau
+nama lainnya), sebaiknya tetap dituliskan dengan diawali garis bawah.
+Sebuah interface otomatis dianggap internal, jika namespace (paket, modul, atau kelasnya) bersifat internal.
+Nama yang di-import harap selalu dianggap sebagai detail implementasi. Modul lainnya tidak diperbolehkan untuk melakukan akses tidak langsung
+untuk nama-nama tersebut, kecuali jika sudah didokumentasikan, misalnya os.path atau modul __init__ yang mengekspos fungsionalitas dari
+submodul.
+

@@ -1,0 +1,12 @@
+Jangan dibiasakan whitespace pada expressions dan statements yang tidak perlu
+Hindari menambahkan whitespace di belakang statement apapun, utamanya di statement akhir
+dalam sebuah baris, karena whitespace tersebut tidak mudah dilihat.
+Nah kecuali:
+Biasakan untuk menambahkan satu spasi baik di kiri maupun di kanan untuk operasi berikut:
+1. Assignment (=)
+2. Augmented Assignment (+=, -=, *=, /=, %=, &=, |=, ^=, <<=, >>=, >>>=)
+3. Comparison (==, !=, <, >, <=, >=, in, not in, is, is not)
+4. Boolean (and, or, not)
+Jika operator dengan berbagai tingkatan prioritas digunakan, letakkan whitespace pada operator dengan
+prioritas terendah. Namun anda juga dapat menyesuaikannya sendiri.
+

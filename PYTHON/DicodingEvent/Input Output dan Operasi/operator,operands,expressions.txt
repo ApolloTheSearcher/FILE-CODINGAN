@@ -1,0 +1,76 @@
+# Matematika dan String
+# + (tambah)
+Menambahkan dua objek.
+3 + 5 menghasilkan 8
+'a' + 'b' menghasilkan 'ab'.
+# - (kurang)
+Mengurangkan operand kedua dari operand pertama. Jika hanya satu operand, diasumsikan nilai operand pertama adalah 0.
+-5.2 adalah expression yang sama dengan 0 - 5.2 menghasilkan -5.2.
+50 - 24 menghasilkan 26.
+Tidak berlaku untuk string, akan menghasilkan error unsupported operand.
+# * (perkalian)
+Mengembalikan hasil perkalian angka atau mengembalikan string yang diulang sejumlah tertentu.
+2 * 3 menghasilkan 6.
+'la' * 3 menghasilkan 'lalala'.
+# ** (pangkat)
+Mengembalikan operand pertama pangkat operand kedua.
+3 ** 4 menghasilkan 81 (sama dengan 3 * 3 * 3 * 3).
+| Tips: untuk akar dua, gunakan pangkat 0.5.
+# / (pembagian)
+Mengembalikan hasil pembagian operand pertama dengan operand kedua (float).
+13 / 3 menghasilkan 4.333333333333333.
+# // (pembagian habis dibagi / div)
+Mengembalikan hasil pembagian operand pertama dengan operand kedua (bilangan bulat), kecuali jika salah satu operand adalah float, akan 
+menghasilkan float.
+13 // 3 menghasilkan 4.
+-13 // 3 menghasilkan -5.
+9//1.81 menghasilkan 4.0.
+# % (modulo)
+Mengembalikan sisa bagi.
+13 % 3 menghasilkan 1.
+-25.5 % 2.25 menghasilkan 1.5
+
+# Operasi Bit
+# << (left shift)
+Menggeser representasi bit/binary dari operand pertama sebanyak operand kedua ke kiri.
+2 << 2 menghasilkan 8.
+2 direpresentasikan sebagai 10 dalam binary.
+Geser ke kiri sebanyak 2x, menjadi 1000 (tambahkan 0 di belakangnya).
+1000 dalam binary bernilai 8 dalam desimal.
+# >> (right shift)
+Menggeser representasi bit/binary dari operand pertama sebanyak operand kedua ke kanan.
+11 >> 1 menghasilkan 5.
+11 direpresentasikan sebagai 1011 dalam binary.
+Geser ke kanan sebanyak 1x, menjadi 101.
+101 dalam binary bernilai 5 dalam desimal.
+# & (bit-wise AND)
+Menjalankan operasi binary AND pada representasi operand pertama dan kedua.
+5 & 3 menghasilkan 1.
+Representasi binary 5 adalah 101 dan representasi binary 3 adalah 011.
+101 and 011 bernilai 001.
+001 dalam desimal adalah 1.
+# | (bit-wise OR)
+Menjalankan operasi binary OR pada representasi operand pertama dan kedua.
+5 | 3 menghasilkan 7.
+Representasi binary 5 adalah 101 dan representasi binary 3 adalah 011.
+101 or 011 bernilai 111.
+111 dalam desimal adalah 7.
+# ^ (bit-wise XOR)
+Menjalankan operasi binary XOR pada representasi operand pertama dan kedua.
+5 ^ 3 menghasilkan 6.
+Representasi binary 5 adalah 101 dan representasi binary 3 adalah 011.
+101 xor 011 bernilai 110.
+110 dalam desimal adalah 6.
+# ~ (bit-wise invert)
+Menjalankan operasi binary invert pada representasi operand.
+Nilai invert dari x adalah -(x+1), menggunakan metode Two’s Complement
+~5 menghasilkan -6.
+Lebih lanjut mengenai Two’s Complement dapat dibaca pada
+
+
+
+
+
+
+
+

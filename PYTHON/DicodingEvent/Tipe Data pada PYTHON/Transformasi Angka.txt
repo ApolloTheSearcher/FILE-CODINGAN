@@ -1,0 +1,62 @@
+* Mengubah Huruf Besar/kecuali
+kita dapat menggunakan upper() dan lower()
+upper() untuk mengubah huruf kecil menjadi huruf besar
+lower() untuk mengubah huruf besar menjadi huruf kecil
+penulisan upper() dan lower() di lakukan di belakang 
+contoh:
+a = "gentha"
+a.upper()
+output: GENTHA
+
+* Awalan dan Akhiran
+terdapat metode yang digunakan untuk menghapus karakter whitespace pada suatu string.
+- rstrip()
+Metode ini digunakan untuk menghapus whitespace pada sebelah kanan string atau akhir string.
+- lstrip()
+Metode ini digunakan untuk menghapus whitespace pada sebelah kiri atau awal string.
+- strip()
+Metode ini digunakan untuk menghapus whitespace pada bagian awal atau akhir string.
+- startswith()
+kemudian ada metode lain yang digunakan untuk memberi nilai true jika string diawali dengan kata Awalan
+tertentu yang kita inginkan, jika tidak maka akan mengembalikan nilaI False.
+contoh:
+print("Gentha".startswith("G"))
+output: True
+print("Gentha".startswith("g"))
+output: False
+- endswith()
+Metode endswith() ini kebalikannya dari metode startswith(), yaitu memberi nilai true jika string diakhiri dengan kata Akhiran
+tertentu yang kita inginkan, jika tidak maka akan mengembalikan nilai False.
+contoh:
+print("Gentha".endswith("a"))
+output: True
+print("Gentha".endswith("A"))
+output: False
+- join()
+Metode join() digunakan untuk menggabungkan string dengan string lain.
+contoh:
+print("-".join(["Gentha", "Ganteng"]))
+output: Gentha-Ganteng
+-split()
+Metode split() digunakan untuk memisahkan string dengan string lain.
+contoh:
+print("Gentha Ganteng".split(" "))
+output: ['Gentha', 'Ganteng']
+- replace()
+Metode replace() digunakan untuk mengganti string dengan string lain.
+Jangan lupa bahwa fungsi replace() itu bersifat case sensitive
+contoh:
+string = "Ayo belajar matematika di SMA"
+print(string.replace("matematika", "fisika"))
+output: Ayo belajar fisika di SMA
+contoh bila terdapat kata yang sama:
+string = "Ayo belajar Coding di Dicoding karena Coding adalah bahasa masa depan"
+print(string.replace("Coding", "Pemrograman", 1))
+1 disitu adalah kata Coding mana yang akan di ubah karena 1 berati kata Coding yang awal.
+
+
+
+
+
+
+

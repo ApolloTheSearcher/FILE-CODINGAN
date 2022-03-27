@@ -1,0 +1,54 @@
+# Statement gabungan
+Usahakan untuk tidak menggabungkan > 1 statement pada baris yang sama.
+
+# Penggunaan Trailing Commas
+Koma di bagian akhir (trailing commas) umumnya bersifat opsional. satu statemen dimana ia bersifat wajib adalah
+saat membuat variabel array.
+# Contoh:
+Files =('setup.cfg',) => disarankan
+Files =(setup.cfg,) => tidak disarankan
+Ini sangat merasa kemudahan ketika saat menggunakan VCS (version control system)
+atau pada kode yang mungkin anda tambahkan dalam beberapa waktu kedepan.
+Tidak umum jika anda meletakkan trailing comma pada baris dimana anda menutup.
+kurung/kurawal/siku, kecuali dalam tuple dengan satu elemen.
+# Contoh: 
+DISARANKAN:
+FILES = [
+    'setup.cfg',
+    'tox.ini',
+    ]
+initialize(FILES,
+           error=True,
+           )
+TIDAK DISARANKAN:
+FILES = ['setup.cfg', 'tox.ini',]
+initialize(FILES, error=True,)
+
+Anotasi Fungsi
+Penggunaan anotasi fungsi sebaiknya menggunakan aturan baku untuk titik dua (:) dan menggunakan spasi untuk penggunaan.
+# Contoh:
+DISARANKAN:
+def munge(input: Anystr):
+def munge() -> Anystr:
+TIDAK DISARANKAN:
+def munge(input:Anystr):
+def munge()->PosInt:
+tidak menggunakan tanda sama dengan (=) untuk mengindikasikan keyword argumen atau nilai dasar/default pada parameter fungsi
+tanpa menggunakan anotasi.
+Jadi kalau = tidak usah memakai anotasi jadi kalau = itu di gabungin aja jangan ada spasi
+# Contoh:
+DISARANKAN:
+def complex(real, imag=0.0):
+    return magic(r=real, i=imag)
+TIDAK DISARANKAN:
+def complex(real, imag = 0.0):
+    return magic(r = real, i = imag)
+Ketika melakukan kombinasi argumen anotas dan nilai dasar/default, disarankan untuk menggunakan spasi
+sebelum dan setelah tanda "=".
+# Contoh:
+DISARANKAN:
+def munge(sep: AnyStr = None): ...
+def munge(input: AnyStr, sep: AnyStr = None, limit=1000): ...
+TIDAK DISARANKAN:
+def munge(input: AnyStr=None): ...
+def munge(input: AnyStr, limit = 1000): …
