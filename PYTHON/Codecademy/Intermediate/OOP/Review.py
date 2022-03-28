@@ -15,6 +15,9 @@ class User:
         self._username = None
 
     @property
+    def username(self):
+        pass
+    @username.getter
     def username(self): 
         return self._username # => Getter
 
