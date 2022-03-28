@@ -9,7 +9,7 @@ class AbstractEmployee(ABC):
     @abstractmethod # => Abstraction
     def say_id(self):
         pass
-
+    
 class User:
     def __init__(self): 
         self._username = None
@@ -17,11 +17,11 @@ class User:
     @property
     def username(self):
         pass
-    @username.getter
+    @username.getter # => Getter decorator
     def username(self): 
         return self._username # => Getter
 
-    @username.setter
+    @username.setter # => Setter decorator
     def username(self, new_name):
         self._username = new_name # => Setter
     # self._username(Protected)
