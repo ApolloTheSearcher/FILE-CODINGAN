@@ -1,0 +1,23 @@
+'''
+Dalam sebuah iterator terdapat 3 kategori didalamnya yaitu:
+- Infinite: Iterator tak terbatas akan mengulangi jumlah yang tak terbatas. Mereka tidak akan memunculkan
+pengecualian StopIteration dan akan memerlukan beberapa jenis kondisi berhenti untuk keluar.
+- Finite: Iterator hingga diakhiri oleh panjang urutan input yang dapat diubah. Ini berarti bahwa iterable
+panjang terkecil yang digunakan dalam iterator hingga akan mengakhiri iterator.
+- Combinatoric: Combinatoric iterator adalah iterator yang kombinasional, di mana fungsi matematika dilakukan
+pada input yang dapat diubah.
+Nah untuk penggunakan 3 ini kita dapat menggunakan dengan mengimport toolsnya yaitu dengan cara:
+import itertools
+* Fungsi yang ada pada Infinite yaitu:
+=> count()
+=> cycle()
+=> repeat()
+* Fungsi yang ada pada Finite yaitu:
+=> chain()
+=> compress()
+=> filterfalse()
+* Fungsi yang ada pada Combinatoric yaitu:
+=> product()
+=> permutations()
+=> combinations()
+'''
