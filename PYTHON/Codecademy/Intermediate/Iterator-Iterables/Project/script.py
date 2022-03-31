@@ -1,6 +1,5 @@
 # New teacher in town (PROJECT FOR Iterator-Iterables)
 import roster
-import itertools
 import class_organizer
 
 class Student:
@@ -17,7 +16,7 @@ class Student:
         else:
             raise StopIteration
         
-# 1. Create iterator for student_roster list and print out each student's information using next()
+# 1. Buat iterator untuk daftar student_roster dan cetak informasi setiap siswa menggunakan next()
 student_list = Student(roster.student_roster)
 student_list_iter = iter(student_list)
 print(next(student_list_iter))
@@ -28,7 +27,8 @@ print(next(student_list_iter))
 print(next(student_list_iter))
 print(next(student_list_iter))
 
-# 4. print out the result to see all the possible table combinations of two student 
+# 4. print the final dari method table_seating
 print(class_organizer.student_tables)
 
-# 5
+# 5. print the final dari two_subject_students yang mengambil semua 4 kombinasi siswa yang pelajaran favoritnya adalah Matematika dan Sains
+print(class_organizer.student_subject)
