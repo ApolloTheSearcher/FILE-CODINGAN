@@ -15,7 +15,9 @@ import itertools
 max_capacity = 1000
 num_bags = 0
 for counts in itertools.count(start = 13.5, step = 13.5):
-    if counts >= max_capacity:
+    # menggunakan ^^^^^^^^^^ di atas itu hanya bisa menggunakan itertools ya untuk memanggil fungsi dari module
+    # itertools
+    if counts >= max_capacity: # Jika nilai counts lebih besar dari max_capacity, maka akan berhenti
         break
-    num_bags += 1
+    num_bags += 1 # Increment dari num_bags
 print(num_bags)

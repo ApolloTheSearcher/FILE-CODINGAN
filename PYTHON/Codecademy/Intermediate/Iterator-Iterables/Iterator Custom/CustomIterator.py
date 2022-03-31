@@ -21,13 +21,13 @@ class FishInventory:
     def __init__(self, fishList):
         self.available_fish = fishList
 
-    def __iter__(self):
-        self.index = 0
-        return self
+    def __iter__(self): # __iter__ adalah method yang akan dijalankan ketika kita memanggil iterable
+        self.index = 0 # Dan disini pada iter dia akan memicu terbuatnya si __next__ karena kalau ada __next__
+        return self # Otomatis harus terlebih dahulu menjalankan __iter__
 
-    def __next__(self):
+    def __next__(self): # __next__ kondisi suatu iterator berjalan
         if self.index < len(self.available_fish):
-            fish_status = self.available_fish[self.index] + " is available!"
+            fish_status = self.available_fish[self.index] + " is available!" 
             self.index += 1
             return fish_status
         else:

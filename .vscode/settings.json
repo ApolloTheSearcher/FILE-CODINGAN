@@ -15,6 +15,9 @@
     "files.associations": {
         "KSN.C": "cpp"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "discord.lowerDetailsNoWorkspaceFound": "Total lines: {total_lines}",
+    "discord.lowerDetailsEditing": "Workspace: {workspace_folder}",
+    "discord.removeRemoteRepository": true
     
 }
