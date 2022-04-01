@@ -1,0 +1,8 @@
+disini kita ingin membuat repository dengan menggunakan bash dan buat repository nya di github.com
+anggap saja kaya clonenya gitu deh
+step:
+git init
+git remote add origin linkclonenya
+git add ./namaFile
+git commit -m "pesan"
+git push -u origin master
