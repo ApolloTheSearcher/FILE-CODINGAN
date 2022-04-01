@@ -71,3 +71,4 @@ print(student_tables)
 subject = ClassroomOrganizer()
 student_subject = subject.two_subject_students() # digunakan untuk memanggil method two_subject_students di script.py
 print(student_subject)
+

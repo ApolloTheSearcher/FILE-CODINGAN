@@ -32,3 +32,4 @@ print(class_organizer.student_tables)
 
 # 5. print the final dari two_subject_students yang mengambil semua 4 kombinasi siswa yang pelajaran favoritnya adalah Matematika dan Sains
 print(class_organizer.student_subject)
+
