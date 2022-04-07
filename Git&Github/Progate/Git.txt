@@ -1,0 +1,10 @@
+- git pull digunakan untuk mengunduh data dari remote repository. yang telah di push ke repository
+- git status digunakan untuk mengecek keseluruhan data dan kita bisa mengetahui mana saja data yang baru di add
+dan yang belum di add
+jika berwarna hijau file sudah di git add sedangkan berwarna merah file belum di git add
+- git log digunakan untuk mengecek kegiatan yang kita lakukan namun jika git log saja kita hanya melihat data apa
+yang dirubah tidak melihat isinya, oleh karena itu untuk dapat melihat isinya kita gunakan git log -p
+Dengan menggunakan git log -p, menampilkan konten yang sudah dimodifikasi dari commit-commit sebelumnya.
+- git diff digunakan untuk melihat perbandingan antara data yang lama dan data yang baru
+jika kita menemukan warna merah artinya itu data lama dan yang warna hijau artinya data yang di ganti dengan data baru
+sedangkan kita jika melihat warna hijau saja artinya terdapat penambahan data baru.

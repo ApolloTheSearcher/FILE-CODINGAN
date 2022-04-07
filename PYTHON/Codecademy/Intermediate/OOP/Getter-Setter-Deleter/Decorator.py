@@ -38,14 +38,17 @@ class PrimarySchool(School):
     @property
     def getPickupPolicy(self):
         pass
+    
     @getPickupPolicy.getter
     def getPickupPolicy(self):
         return self.__pickupPolicy
     @getPickupPolicy.setter
+    
     def getPickupPolicy(self, newPolicy): # untuk setter pada parameter terdapat argument untuk menginput
         self.__pickupPolicy = newPolicy
         info1 = print(self.__pickupPolicy, f"\nPickup telah diganti menjadi {self.__pickupPolicy}")
         return info1
+    
     @getPickupPolicy.deleter
     def getPickupPolicy(self):
         print("Ini telah di hapus sehingga menjadi None")
@@ -81,11 +84,11 @@ class HighSchool(School):
         # disini ada sedikit perubahan yaitu mengubah level menjadi High(default)
         
         self.__sportTeams = sportTeams
-
-
+    
     @property
     def getSportTeams(self):
         pass
+    
     @getSportTeams.getter # => Getter kalau semisalnya kita ingin mengambil nilai private dari constractor
     def getSportTeams(self):
         return self.__sportTeams

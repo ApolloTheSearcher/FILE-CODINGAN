@@ -1,4 +1,5 @@
 from menu import Menu
+
 import os
 if __name__ == "__main__":
     uang = 3000000

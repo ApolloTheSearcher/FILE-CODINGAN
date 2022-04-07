@@ -26,6 +26,7 @@ def science_students(x):
 def non_science_students(x,y):
     for i in range(x,y+1):
         yield i
+        
 
 # Write your code below
 def combined_students():
