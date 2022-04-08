@@ -44,7 +44,7 @@ class PrimarySchool(School):
         return primarySchool + f" The pickup polity is {self.pickupPolicy}"
 # TEST PrimarySchool
 testSchool = PrimarySchool("Codecademy", 300, "Pickup Allowed")
-print(testSchool.getPickupPolicy())
+print(testSchool.getPickupPolicy()) 
 print(testSchool)
 
 # Create HighSchool Class
