@@ -75,3 +75,25 @@ print(song_tags)
 # Try removing a non-existent element but with the discard method
 song_tags.discard('fiddle') # => tidak akan terjadi KeyError Jika datanya tidak ada di dalam set
 print(song_tags)
+
+# Kemudian terdapat pada method yang keren lagi yang dimiliki set yaitu method untuk mencari element yang ada didalam set
+# Dan nanti yang akan di hasilkan adalah nilai Boolean.
+# Contoh programnya:
+allowed_tags = ['pop', 'hip-hop', 'rap', 'dance', 'electronic', 'latin', 'indie', 'alternative rock', 'classical', 'k-pop', 'country', 'rock', 'metal', 'jazz', 'exciting', 'sad', 'happy', 'upbeat', 'party', 'synth', 'rhythmic', 'emotional', 'relationship', 'warm', 'guitar', 'fiddle', 'romance', 'chill', 'swing']
+
+song_data_users = {'Retro Words': ['pop', 'explosion', 'hammer', 'bomb', 'warm', 'due', 'writer', 'happy', 'horrible', 'electric', 'mushroom', 'shed']}
+
+# Write your code below!
+tag_set = set(song_data_users['Retro Words'])
+# Checkpoint 2
+bad_tags = []
+for tag in tag_set:
+    if tag not in allowed_tags:
+        bad_tags.append(tag)
+# Checkpoint 3
+for tag in bad_tags:
+    if tag in bad_tags:
+        tag_set.remove(tag)
+
+song_data_users['Retro Words'] = tag_set
+print(song_data_users)
