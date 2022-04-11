@@ -94,3 +94,67 @@ cekCleandict.cekCleanOrders()
 print(process_dict)
 print("+++++++++++++++++++++++++++++++++++++++++") 
 print(cekCleandict)
+
+# UserList
+# Userlist adalah sebuah module dari collections yang digunakan sebagai wadah pembungkus atau juga memungkinkan
+# kita membuat dict kita sendiri dari List.
+# Module ini digunakan pada class sebagai Inheritance dan didalamnya masih bisa menggunakan fungsi fungsi
+# yang ada pada list
+# Pada UserList ini kita memiliki property yang bernama self.data yang memungkinkan kita untuk mengakses
+# list langsung
+# Contoh programnya:
+from collections import UserList
+listangka = [4, 6, 8, 9, 5, 7, 3, 1, 0]
+
+# Write your code below!
+class ListSorter(UserList):
+    def append(self,items):
+        self.data.append(items) # self.data ini kita bisa akses langsung dari data yang ada di list atas
+        self.data.sort()
+
+sorted_list = ListSorter(data)
+sorted_list.append(2)
+print(sorted_list)
+
+# UserString
+'''
+Karena string juga dianggap sebagai wadah, collectionsmodul juga menyediakan pembungkus wadah untuk kelas
+string. Ini berisi semua fungsionalitas string biasa, tetapi ini termasuk data string di dalam properti yang
+disebut data. Mewarisi dari kelas ini memungkinkan kita untuk membuat versi string kita sendiri!
+'''
+# Contoh:
+from collections import UserString
+# Create a class which inherits from the UserString class
+class IntenseString(UserString):
+    # A new method to capitalize and add exclamation points to our string
+    def exclaim(self):
+        self.data = self.data.upper() + '!!!'
+        return self.data
+    # Overwrite the count method to only count a certain letter
+    def count(self, sub=None, start=0, end=0):
+        num = 0
+        for let in self.data:
+            if let == 'P':
+                num+=1
+        return num
+    
+intense_string = IntenseString("python rules")
+
+print(intense_string.exclaim())
+print(intense_string.count())
+
+# atau contoh lain:
+from collections import UserString
+
+str_name = 'python powered patterned products'
+str_word = 'patterned '
+
+# Write your code below!
+class SubtractString(UserString):
+    def __sub__(self, items):
+        if items in self.data:
+            self.data = self.data.replace(items,'')
+
+subtract_string = SubtractString(str_name)
+subtract_string - str_word
+print(subtract_string)
