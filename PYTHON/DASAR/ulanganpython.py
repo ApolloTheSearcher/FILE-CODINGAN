@@ -134,7 +134,6 @@
 
 #     fptr.close()
 
-print(9%4)
 
 
 

@@ -1,0 +1,11 @@
+Bahasa golang adalah bahasa yang pass by value. dimana kita dapat melewatkan fungsi nilai dari sebuah argumen.
+Dalam pengertian teknis, saat kita memanggil fungsi dengan argumen, kompiler Go secara ketat menggunakan nilai argumen
+daripada argumen itu sendiri. Karena fitur ini (pass-by-value), perubahan yang terjadi di fungsi kita, tetap berada 
+di dalam fungsi itu.
+Bayangkan seorang guru dengan kelas siswa dan guru membutuhkan siswa untuk menyelesaikan lembar kerja.
+Guru akan memiliki salinan asli lembar kerja dan membuat salinan untuk ditulis oleh siswanya, tetapi siswa tidak langsung menulis
+pada salinan guru. jadi si guru itu nyalin dulu.
+Untuk melakukannya pada bahasa Golang, kita perlu menggunakan:
+- Pointers
+- Addreses
+- Dereferencing

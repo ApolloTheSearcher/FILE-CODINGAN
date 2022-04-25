@@ -17,7 +17,7 @@
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "discord.lowerDetailsNoWorkspaceFound": "Total lines: {total_lines}",
-    "discord.lowerDetailsEditing": "Workspace: {workspace_folder}",
+    "discord.lowerDetailsEditing": "Total lines: {total_lines}",
     "discord.removeRemoteRepository": true
     
 }
