@@ -1,11 +1,13 @@
 # Untuk mengasah kemampuan OOP, ada study casenya yaitu membuat School Catalogue
 class School:
+    # Dibawah ini adalah Fieldnya dari class School
     def __init__(self, name, level,numberOfStudent):
+        # Dibawah ini adalah Constructor dari class School
         self.name = name
         self.level = level
         self.numberOfStudent = numberOfStudent
-# Getter
 
+# Getter
     def getName(self):
         return self.name
     def getLevel(self):
@@ -26,13 +28,18 @@ print(mySchool.getLevel())
 mySchool.setNumber(200) # => Setter kita gunakan setter untuk mengubah nilai 100 yang ada di mySchool
 print(mySchool.getNumber())
 
+# Inheritance dari class School
 # Create PrimarySchool class
-class PrimarySchool(School):
+class PrimarySchool(School): #                 ↓↓↓↓↓↓↓↓↓ => Field baru di tambahkan yaitu pickupPolicy
     def __init__(self, name, numberOfStudents, pickupPolicy): 
         # Pada constructor ini kita hanya memerlukan parameter 3 ini tidak termasuk level yang ada di parameter atas
         super().__init__(name, "primary", numberOfStudents)
         # pada pengambilan method dengan super, super().namaMethod(parameter methodnya yang di ambil)
         # disini ada sedikit perubahan yaitu mengubah level menjadi primary(default)
+        # jadinya nanti karena kita menggunakan super() dan didalamnya pada bagian level di ganti ganti default
+        # berupa "primary"
+        # Jadi kaya gini si codenya kalo gk pake super() :
+        # self.level = "primary"
         self.pickupPolicy = pickupPolicy
 
     def getPickupPolicy(self):

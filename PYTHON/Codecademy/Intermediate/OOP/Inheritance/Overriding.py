@@ -3,7 +3,7 @@
 # method lagi di class anaknya(Inheritance).
 # Contoh:
 class Employee():
-    new_id = 1
+    new_id = 1 # => Static Field
     def __init__(self):
         self.id = Employee.new_id
         Employee.new_id += 1
