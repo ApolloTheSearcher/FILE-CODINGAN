@@ -1,0 +1,69 @@
+Pada bahasa sql kita dapat menggunakannya disegala data base karena sql yang bersifat universal
+// Kueri
+- SELECT => mengambil data berupa kolom dari database. Contoh SELECT name => berati mengambil kolom name pada database.
+- FROM => sumber database yang ingin diambilnya FROM purchase => berati mengambil database purchase.
+- ; => mengakhiri kueri.
+Fyi : bebas ingin menggunakan huruf besar atau kecil namun biar lebih enaknya kita menggunakan huruf besar.
+- SELECT * => tanda * digunakan untuk mengakses semua kolom yang ada di database karena ribet kalo nulis satu satu.
+- WHERE => mengambil data/baris dari database yang sesuai dengan kondisi tertentu.
+Contoh:
+WHERE category = 'makanan' 
+ini akan mengakses kolom category namun nanti yang akan muncul yang hanya barisnya terdapat isi datanya 'makanan'.
+Jenis data untuk WHERE dimana jika kita ingin mengambil bentuk string kita bisa menggunakan tanda ""
+dan apabila int kita tinggal tulis saja angkanya, namun bila kita ingin mencari sebuah tanggal kita dapat menggunakan tanda""
+biar lebih memudahkan contoh tanggal WHERE category = "28-01-2020" <= digunakan untuk mencari tanggal
+Atau:
+- tipe data = teks (kita menggunakan tanda "")
+- tipe data = angka (tanpa menggunakan tanda "")
+- tipe data = tanggal (kita menggunakan tanda "" dengan format : tahun-bulan-hari)
+kita juga dapat mencari sesuatu yang lebih dari dengan menggunakan operasi perbandingan jika data yang ingin
+kita ambil adalah angka maka kita bisa menggunakan tanda <,>,=,<=,>=,<>, NOT, AND, OR
+- LIKE => digunakan untuk mengambil data pada kolom dengan lebih spesifik.
+Contoh:
+LIKE '%makanan%' => mengambil data pada kolom yang berisi teks makanan bisa di awal kalimat, tengah, dan akhir. 
+LIKE '%makanan' => mengambil data pada kolom yang berisi teks makanan di akhir kalimat.
+LIKE 'makanan%' => mengambil data pada kolom yang berisi teks makanan di awal kalimat.
+LIKE 'makanan' => mengambil data pada kolom yang berisi teks makanan aja.
+di tentukan oleh tanda %.
+LIKE ini digunakan bersama WHERE (WHERE nama LIKE nilai_string)
+Contoh menggunakan WHERE LIKE dengan menggunakan NOT:
+/*
+dibawah "FROM purchases" tambahkan code untuk mendapatkan semua baris dimana
+kolom "name" tidak mengandung kata "puding"
+*/
+SELECT *
+FROM purchases
+// Cara Negation
+WHERE NOT name LIKE "%puding%" (WHERE NOT "Kondisinya seperti name LIKE nilai_string")
+- IS NULL and IS NOT NULL (Untuk cek apakah kolom tersebut null atau tidak)
+Contoh:
+WHERE name IS NULL => mengambil data pada kolom yang berisi null. tidak bisa menggunakan WHERE name = null.
+- Penggunaan AND dan OR
+WHERE name = 'makanan' => kondisi 1
+AND category = 'makanan' => kondisi 2
+dan berlaku juga untuk OR sama penulisannya seperti AND
+
+-- Mengelola data -- 
+Kueri yang digunakan yaitu ORDER BY dan LIMIT
+- ORDER BY => mengurutkan data berdasarkan kolom yang ingin kita ambil.
+ORDER BY column_name method_order;
+method_order => ASC => mengurutkan data dari yang terkecil ke yang terbesar.
+method_order => DESC => mengurutkan data dari yang terbesar ke yang terkecil.
+Kita juga dapat menggabungkannya dengan menggunakan WHERE untuk mengurutkan data berdasarkan kondisi tertentu.
+Contoh:
+SELECT *
+FROM purchases
+WHERE character_name = "Ninja Ken"
+ORDER BY price ASC;
+- LIMIT => mengambil data berdasarkan jumlah yang ingin kita ambil.
+LIMIT jumlah_baris;
+Contoh:
+SELECT *
+FROM purchases
+WHERE character_name = "Ninja Ken" => mengambil data berdasarkan nama ninja ken
+LIMIT 10;
+
+
+
+
+

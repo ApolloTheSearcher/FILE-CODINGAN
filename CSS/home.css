@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'PlusJakartaSans-ExtraBold';
+    src: url('/CSS/assets/fonts/PlusJakartaSans-ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'PlusJakartaSans-Regular';
+    src: url('/CSS/assets/fonts/PlusJakartaSans-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    background: linear-gradient(to bottom, #ffffffbf, rgb(255, 255, 255)), url('https://sso.smandak.sch.id/api/res/bg/?e=20');
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+#body {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+}
+#body {
+    font-size: 50px;
+    font-family: 'PlusJakartaSans-ExtraBold';
+    text-align: center;
+    color: #fff;
+    
+}
+
+footer{
+    bottom: 10px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+
+}
+
+#copyright{
+    font-size: 20px;
+    font-family: 'PlusJakartaSans-Regular';
+    text-align: center;
+    color: #fff;
+}
+
+.link,
+.link:link,
+.link:active,
+.link:visited{
+	font-size: 20pt;
+	background: #035cfa;
+	color: #fff;
+	text-decoration: none;
+	padding: 25px;
+	font-family: 'PlusJakartaSans-Regular';
+    border: dashed ;
+    border-radius: 8px;
+}
+.link:hover{
+	background: #fff56a;
+    color: black;
+}

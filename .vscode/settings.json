@@ -18,6 +18,7 @@
     "C_Cpp.errorSquiggles": "Disabled",
     "discord.lowerDetailsNoWorkspaceFound": "Total lines: {total_lines}",
     "discord.lowerDetailsEditing": "Total lines: {total_lines}",
-    "discord.removeRemoteRepository": true
+    "discord.removeRemoteRepository": true,
+    "liveServer.settings.port": 5501
     
 }

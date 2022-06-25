@@ -1,0 +1,32 @@
+/* Disini kita akan belajar menggunakan css*/
+
+/*disini h1 nya sebagai lokasi yang ingin kita css kan pada file htmlnya*/
+h1 {
+    color: red;
+    font-size: 30px; /*ini untuk mengatur ukuran font*/
+    font-family: "Luciad Grande"; /*ini untuk mengatur font fontnya sesuai yang pernah download di device atau
+    bisa juga digunakan langsung dari font dari google asalnya yang dimasukan berformat ttf atau yang lainnya.*/
+}
+/* dan didalamnya kita dapat menambahkan apa saja sesuai format yang ada*/
+/* nah pada bahasa html juga ada yang namanya itu class digunakan untuk membedakan bila terdapat label tag yang sama 
+Cara pemanggilannya yaitu seperti berikut: */
+.label1{ /*ini untuk menCSS di html pada tag l1 namun classnya label1*/
+    color: red;
+    font-size: 30px;
+    font-family: "Luciad Grande";
+    list-style: none; /*ini untuk menghilangkan list style*/
+    float: left; /*ini untuk mengatur posisi float*/
+}
+/* kan pada list di atas ini terdapat tanda bullet nah jika ingin menghapusnya kita tinggal tambahkan list-style: none; pada cssnya
+Tadi kan kita udah menghilangkan bulletnya, kan list itu bentuknya secara vertikal nah bagaimana kita mengubahnya menjadi horizontal
+caranya yaitu dengan menambahkan float:left/posititon yang diinginkan; ditambahkan pada css nya ya. nanti kan gk sejajar nih dengan
+headernya bagaimana kita menyejajarkan nya si list dengan headernya yaitu dengan menambahkan floatnya juga pada headernya ya*/
+
+.header{
+    background-color: cornflowerblue;
+    height: 90px;
+}
+.footer{
+    background-color: cornflowerblue;
+    height: 270px;
+}

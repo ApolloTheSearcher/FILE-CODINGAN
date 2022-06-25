@@ -17,6 +17,7 @@ void main(List<String> args) {
   // print(variablenyaDijadiinString);
   print(variablenyaDijadiinInt);
   // Mengeceknya
+  // ignore: unnecessary_type_check
   var isInt = variable is int;
   var isNotBoolean = variable is! bool;
   print(isInt);
